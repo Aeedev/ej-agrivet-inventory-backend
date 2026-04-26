@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Product</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 p-6">
+
+<h1 class="text-2xl font-bold mb-6">Edit Product</h1>
+
+<form method="POST" class="bg-white p-6 rounded-xl shadow max-w-md">
+  {% csrf_token %}
+
+  <input name="name" value="{{ product.name }}"
+    class="w-full border p-2 mb-3 rounded" required>
+
+  <input name="category" value="{{ product.category }}"
+    class="w-full border p-2 mb-3 rounded" required>
+
+  <input name="price" type="number" value="{{ product.price }}"
+    class="w-full border p-2 mb-3 rounded" required>
+
+  <input name="quantity" type="number" value="{{ product.quantity }}"
+    class="w-full border p-2 mb-3 rounded" required>
+
+  <button class="bg-blue-600 text-white px-4 py-2 rounded w-full hover:bg-blue-700">
+    Update Product
+  </button>
+</form>
+
+</body>
+</html>

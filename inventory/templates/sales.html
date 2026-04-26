@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sales History</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+<nav class="bg-green-700 text-white p-4 flex justify-between shadow">
+  <h1 class="text-xl font-bold">EJ Agri-Vet Trading</h1>
+  <div>
+    <a href="/" class="mr-4 hover:underline">Products</a>
+    <a href="/sales/" class="hover:underline">Sales</a>
+  </div>
+</nav>
+
+<div class="p-6">
+
+  <h2 class="text-2xl font-bold mb-6">Sales History</h2>
+
+  <table class="w-full bg-white rounded shadow">
+    <thead class="bg-gray-200">
+      <tr>
+        <th class="p-3">Product</th>
+        <th class="p-3">Quantity</th>
+        <th class="p-3">Total</th>
+        <th class="p-3">Date</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {% for sale in sales %}
+      <tr class="text-center border-t">
+        <td class="p-3">{{ sale.product }}</td>
+        <td class="p-3">{{ sale.quantity }}</td>
+        <td class="p-3 text-green-600 font-bold">₱{{ sale.total_price }}</td>
+        <td class="p-3">{{ sale.date }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+
+  </table>
+
+</div>
+
+</body>
+</html>
